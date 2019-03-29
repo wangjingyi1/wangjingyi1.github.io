@@ -24,7 +24,7 @@
 <link rel="shortcut icon" href="/images/favicon.png">
 
 
-<title>Hexo - </title>
+<title>i春秋一 - Hexo</title>
 
 <meta name="keywords" content>
 
@@ -112,21 +112,9 @@
 
             <div class="page-title">
     <ul>
-        <li class="active">
-            <a href="/" data-name="Recent Posts">Recent Posts</a>
-        </li>
+        <li><a href="/">Recent Posts</a></li>
         
-        <li class>
-            <a href="/categories/tech-notes" data-name="技术">技术</a>
-        </li>
         
-        <li class>
-            <a href="/categories/humanities" data-name="人文">人文</a>
-        </li>
-        
-        <li class>
-            <a href="/categories/others" data-name="其他">其他</a>
-        </li>
         
         <li class="page-search">
     <form id="search" class="search-form">
@@ -138,72 +126,61 @@
     </ul>
 </div>
 <div class="main-inner">
-    
-        
-            
-<article class="post">
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="https://shuoit.net" target="_blank">
-                <strong>纠结伦</strong>
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="https://shuoit.net" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar">
+                </a>
+                <p><span class="label">Author</span>
+                    <a href="https://shuoit.net" target="_blank">纠结伦</a>
+                    <span title="Last edited at&nbsp;2019-03-29">2019-03-29</span>
+                </p>
+                <p>一个搬🧱的劳斯基😁️️</p>
+            </div>
+            <h2 class="post-title">i春秋一</h2>
+            <div class="post-meta">
+                emm... 1189 words in the article |
+                you are the&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>th friend who reading now
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h2 id="爆破-1"><a href="#爆破-1" class="headerlink" title="爆破-1"></a>爆破-1</h2><p><img src="/2019/03/29/i春秋一/i春秋一-12f8295a.PNG" alt><br>preg_match(‘/^\w*$/‘,$a ) 匹配正则表达式，^开始，$结束，<br>\w 匹配字母、数字、下划线。等价于’[A-Za-z0-9_]’.</p>
+<ul>
+<li>匹配前面的子表达式零次或多次。例如，zo<em> 能匹配 “z” 以及 “zoo”。</em> 等价于{0,}.<br>$_request与$_post、$_get的区别：<br><a href="https://www.cnblogs.com/woshare/p/4509172.html" target="_blank" rel="noopener">https://www.cnblogs.com/woshare/p/4509172.html</a><br>var_dump() 函数显示关于一个或多个表达式的结构信息，包括表达式的类型与值。数组将递归展开值，通过缩进显示其结构<br>eval()输出值<br>show_source() 函数对文件进行语法高亮显示<br>此题用$GLOBALS定义：引用全局作用域中可用的全部变量（一个包含了全部变量的全局组合数组）。<br>构造：?hello=GLOBALS<br>结果：flag{5fd0237c-e50b-476f-9dfc-4d74dfbf94e5}</li>
+</ul>
+<h2 id="爆破-2"><a href="#爆破-2" class="headerlink" title="爆破-2"></a>爆破-2</h2><p><img src="/2019/03/29/i春秋一/i春秋一-043db9ad.PNG" alt><br>所有函数在爆破-1全部解释。<br>使用file或者get_file_contents函数来获得falg.php文件的内容即可，这两个函数的不同之处在于，使用file函数可以把注释语句也数出来，但是使用file_fet_contents函数时，由于它把flag.php文件作为字符串输出，所以注释语句不会显示出来。<br>构造：?hello=file(‘flag.php’)<br>结果：flag{4da3fafe-adc9-4f89-baa4-390417b0e3f4}</p>
+<h2 id="爆破-3"><a href="#爆破-3" class="headerlink" title="爆破-3"></a>爆破-3</h2><p><img src="/2019/03/29/i春秋一/i春秋一-7e8a5022.PNG" alt><br>mt_rand(min,max) 生成随机数。<br>关于$_SESSION：<br><a href="https://blog.csdn.net/zhengxijia2012/article/details/73437376" target="_blank" rel="noopener">https://blog.csdn.net/zhengxijia2012/article/details/73437376</a><br>观察发现，要拿到flag需要 $_SESSION[‘nums’]&gt;=10，而且开头对$_SESSION[‘nums’]赋了0值，所以要需要下面的$_SESSION[‘nums’]++，来使$_SESSION[‘nums’]&gt;=10，意思就是，我们需要在$_SESSION[‘nums’]++的循环里循环十次，所以现在的目标变成满足循环条件$_SESSION[‘whoami’]==($value[0].$value[1]) &amp;&amp; substr(md5($value),5,4)==0。<br>md5部分我们用数组绕过就行了，主要是前面的$_SESSION[‘whoami’]==($value[0].$value[1])。<br>刚开始$_SESSION[‘whoami’]==’ea’，所以第一次我们传递的时候需要传递value[]=ea，而后面，$_SESSION[‘whoami’]变成了$str_rands，然后我们就需要获取到$str_rands，通过回显就能拿到。<br>十次爆破。。。<br><img src="/2019/03/29/i春秋一/i春秋一-59bf18c9.PNG" alt></p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> Donate
             </a>
-            <em>·</em>2019-03-29
-            
         </div>
-        <a class="post-title" href="/2019/03/29/i春秋一/" target="_blank" title="i春秋一">i春秋一</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
-            
-                <em>·</em>
-                <a href="http://yoursite.com/tags/ctf-web-i春秋/" target="_blank">ctf web i春秋</a>
-            
-        </div>
-    </div>
-    <div class="post-desc">
-        i春秋一
-    </div>
-</article>
-
-
-
         
+        <div class="post-tags">Tags：
             
-<article class="post">
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="https://shuoit.net" target="_blank">
-                <strong>纠结伦</strong>
-            </a>
-            <em>·</em>2019-03-29
+            <a href="/tags/ctf-web-i春秋/">ctf web i春秋</a>
             
         </div>
-        <a class="post-title" href="/2019/03/29/api-调用/" target="_blank" title="web wp Jarvis">web wp Jarvis</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
-            
-                <em>·</em>
-                <a href="http://yoursite.com/tags/ctf-jarvis-OJ-xxe实体注入/" target="_blank">ctf jarvis OJ xxe实体注入</a>
-            
-        </div>
-    </div>
-    <div class="post-desc">
-        web wp Jarvis
-    </div>
-</article>
-
-
-
         
+    </article>
     
+    <p style="text-align: center">This article just represents my own viewpoint. If there is something wrong, please correct me.</p>
+    
+    
+
+    
+
 </div>
+<script src="/js/busuanzi.pure.mini.js"></script>
 
 
         </div><!-- end #main-->
     </div><!-- end #body -->
     <footer class="footer">
-    <div class="footer-inner" style="text-align: left">
+    <div class="footer-inner" style="text-align: center">
         <p>
             <a href="/about" title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             <!-- 自定义链接 -->
