@@ -24,7 +24,7 @@
 <link rel="shortcut icon" href="/images/favicon.png">
 
 
-<title>tags - ctf - Hexo</title>
+<title>123 i春秋 - Hexo</title>
 
 <meta name="keywords" content>
 
@@ -112,21 +112,9 @@
 
             <div class="page-title">
     <ul>
-        <li class>
-            <a href="/" data-name="Recent Posts">Recent Posts</a>
-        </li>
+        <li><a href="/">Recent Posts</a></li>
         
-        <li class>
-            <a href="/categories/tech-notes" data-name="技术">技术</a>
-        </li>
         
-        <li class>
-            <a href="/categories/humanities" data-name="人文">人文</a>
-        </li>
-        
-        <li class>
-            <a href="/categories/others" data-name="其他">其他</a>
-        </li>
         
         <li class="page-search">
     <form id="search" class="search-form">
@@ -138,72 +126,61 @@
     </ul>
 </div>
 <div class="main-inner">
-    
-        
-            
-<article class="post">
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="https://shuoit.net" target="_blank">
-                <strong>纠结伦</strong>
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="https://shuoit.net" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar">
+                </a>
+                <p><span class="label">Author</span>
+                    <a href="https://shuoit.net" target="_blank">纠结伦</a>
+                    <span title="Last edited at&nbsp;2019-04-01">2019-04-01</span>
+                </p>
+                <p>一个搬🧱的劳斯基😁️️</p>
+            </div>
+            <h2 class="post-title">123 i春秋</h2>
+            <div class="post-meta">
+                emm... 584 words in the article |
+                you are the&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>th friend who reading now
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <p>这道题不看别人的wp完全不会做啊。。。<br>一开始以为注入。。。结果考的东西很多。。身为资深菜鸟，不会的东西也有很多。继续努力吧！！</p>
+<p>首先一个知识点，bak文件是数据删除后留下的备份文件，这个只是点以前刷bugku时好像做过，但是当时还没有自己的博客，所以也没有总结。。。。。<br><img src="/2019/04/01/123-i春秋/123-i春秋-bfd8cf65.PNG" alt><br>把文件后缀改为.doc，发现里面全都是人名，再根据源码里给的提示，然后用bp爆破<br>bp爆破的设置也参考了别人的wp，记录一下吧，自己太菜，莫办法啊。。。。<br>选好爆破的位子：<br><img src="/2019/04/01/123-i春秋/123-i春秋-ff4e5230.PNG" alt><br>第一个位子：<br><img src="/2019/04/01/123-i春秋/123-i春秋-b7905df9.PNG" alt><br>第二个：<br><img src="/2019/04/01/123-i春秋/123-i春秋-7b6a7b00.PNG" alt><br>第三个：<br><img src="/2019/04/01/123-i春秋/123-i春秋-0c98cf76.PNG
+结果：
+![](assets/123-i春秋-b0b04213.PNG" alt></p>
+<p>进行登录，登陆后发现页面空白，查看源码，发现有一个被注释掉的表格，去掉注释，这里我竟然弄了很长时间，必须记录一下：<br>打开f12，发现没有办法直接进行更改，我选择的方法是将代码先复制到notepad++，然后将注释的两短节点删除，在编辑html，将notepad++中的代码复制过去，ok！<br>一切弄完后，发现是一个文件上传目录，尝试了一句话木马，只能.jpg，换一个图片马，还是不行，试了好多次，最后看了大佬的wp，发现原来只是用了一下php的别名：php2, php3, php4, php5, phps, pht, phtm, phtml。。。。。。用然后通过更改文件名称，出现一个链接：<br><img src="/2019/04/01/123-i春秋/123-i春秋-05927bcc.PNG" alt><br>进入，发现文件包含：<br><img src="/2019/04/01/123-i春秋/123-i春秋-1af2f889.PNG" alt><br>失败：<br><img src="/2019/04/01/123-i春秋/123-i春秋-9e87a021.PNG" alt><br>双写flag，绕过过滤：<br><img src="/2019/04/01/123-i春秋/123-i春秋-b0073c41.PNG" alt></p>
+<p>结束了，要去上课了。。。身为大二学生，还要补离散。。。。。。</p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> Donate
             </a>
-            <em>·</em>2019-04-01
-            
         </div>
-        <a class="post-title" href="/2019/04/01/123-i春秋/" target="_blank" title="123 i春秋">123 i春秋</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
-            
-                <em>·</em>
-                <a href="http://yoursite.com/tags/ctf/" target="_blank">ctf</a>
-            
-        </div>
-    </div>
-    <div class="post-desc">
-        123 i春秋
-    </div>
-</article>
-
-
-
         
+        <div class="post-tags">Tags：
             
-<article class="post">
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="https://shuoit.net" target="_blank">
-                <strong>纠结伦</strong>
-            </a>
-            <em>·</em>2019-03-29
+            <a href="/tags/ctf/">ctf</a>
             
         </div>
-        <a class="post-title" href="/2019/03/29/i春秋二/" target="_blank" title="i春秋二 web code">i春秋二 web code</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
-            
-                <em>·</em>
-                <a href="http://yoursite.com/tags/ctf/" target="_blank">ctf</a>
-            
-        </div>
-    </div>
-    <div class="post-desc">
-        i春秋二 web code
-    </div>
-</article>
-
-
-
         
+    </article>
     
+    <p style="text-align: center">This article just represents my own viewpoint. If there is something wrong, please correct me.</p>
+    
+    
+
+    
+
 </div>
+<script src="/js/busuanzi.pure.mini.js"></script>
 
 
         </div><!-- end #main-->
     </div><!-- end #body -->
     <footer class="footer">
-    <div class="footer-inner" style="text-align: left">
+    <div class="footer-inner" style="text-align: center">
         <p>
             <a href="/about" title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             <!-- 自定义链接 -->
