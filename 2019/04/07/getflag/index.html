@@ -24,7 +24,7 @@
 <link rel="shortcut icon" href="/images/favicon.png">
 
 
-<title>archives- 2019 - Hexo</title>
+<title>getflag + not found - Hexo</title>
 
 <meta name="keywords" content>
 
@@ -112,8 +112,10 @@
 
             <div class="page-title">
     <ul>
-        <li><a href="/" data-name="Home" title="Back Home">Home</a></li>
-        <li><a href="/tags" data-name="Tag Cloud" title="Tag Cloud">Tags</a></li>
+        <li><a href="/">Recent Posts</a></li>
+        
+        
+        
         <li class="page-search">
     <form id="search" class="search-form">
         <input type="text" readonly="readonly" id="local-search-input-tip" placeholder="click to search...">
@@ -126,111 +128,55 @@
 <div class="main-inner">
     <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
         <div class="post-header">
-            <h3 class="post-title">Nice 🥳 9 posts in total. Keep on posting.</h3>
-        </div>
-        
-
-        <div class="post-content markdown-body" itemprop="articleBody">
-            <div class="archives">
-                
-                
-                
-                
-                
-                <div class="archives-item">
-                    <h2>2019年04月</h2>
-                    <ul class="archives_list">
-                        
-                        <li>07日22:25:13
-                            <a href="/2019/04/07/getflag/">getflag + not found</a>
-                            
-                        </li>
-                        
-                
-                
-                
-                        <li>02日22:55:00
-                            <a href="/2019/04/02/Backdoora/">Backdoora</a>
-                            
-                        </li>
-                        
-                
-                
-                
-                        <li>01日22:50:37
-                            <a href="/2019/04/01/123-i春秋/">123 i春秋</a>
-                            
-                        </li>
-                        
-                
-                
-                
-                        <li>01日19:14:34
-                            <a href="/2019/04/01/i-春秋-sql/">i 春秋 sql</a>
-                            
-                        </li>
-                        
-                    </ul>
-                </div>
-                
-                
-                
-                
-                
-                <div class="archives-item">
-                    <h2>2019年03月</h2>
-                    <ul class="archives_list">
-                        
-                        <li>30日23:32:25
-                            <a href="/2019/03/30/i春秋-CMS/">i春秋 CMS</a>
-                            
-                        </li>
-                        
-                
-                
-                
-                        <li>30日11:02:06
-                            <a href="/2019/03/30/i春秋-XSS平台/">i春秋 XSS平台</a>
-                            
-                        </li>
-                        
-                
-                
-                
-                        <li>29日22:49:39
-                            <a href="/2019/03/29/i春秋二/">i春秋二 web code</a>
-                            
-                        </li>
-                        
-                
-                
-                
-                        <li>29日19:55:43
-                            <a href="/2019/03/29/i春秋一/">i春秋一 爆破</a>
-                            
-                        </li>
-                        
-                
-                
-                
-                        <li>29日10:44:39
-                            <a href="/2019/03/29/api-调用/">web wp Jarvis</a>
-                            
-                        </li>
-                        
-                    </ul>
-                </div>
-                
-                
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="https://shuoit.net" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar">
+                </a>
+                <p><span class="label">Author</span>
+                    <a href="https://shuoit.net" target="_blank">纠结伦</a>
+                    <span title="Last edited at&nbsp;2019-04-07">2019-04-07</span>
+                </p>
+                <p>一个搬🧱的劳斯基😁️️</p>
+            </div>
+            <h2 class="post-title">getflag + not found</h2>
+            <div class="post-meta">
+                emm... 966 words in the article |
+                you are the&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>th friend who reading now
             </div>
         </div>
+        <div class="post-content markdown-body">
+            <h1 id="Getflag"><a href="#Getflag" class="headerlink" title="Getflag"></a>Getflag</h1><p>这道题我第一眼看一位SQL注入，当我刚准备要开始大展身手的时候，额(⊙o⊙)…。。。。没有验证码。后来找了大佬的爆破脚本，进行了爆破。<br>脚本：<br>import hashlib<br>def md5(s):<br>    return hashlib.md5(str(s).encode(‘utf-8’)).hexdigest() #用md5先把参数s用utf-8编码之后进行加密，hexdigest表示返回返回摘要，作为十六进制数据字符串值<br>def main(s):<br>    for i in range(1,99999999):<br>        if md5(i)[0:6]  == str(s):     #截取密文前6位与 用户传入的值进行比对  (具体情况具体修改)<br>            print(i)<br>            exit(0)<br>if <strong>name</strong> == ‘<strong>main</strong>‘:<br>    main(“5dd56a”)<br>结果为：<br><img src="/2019/04/07/getflag/getflag-5ebd4d95.png" alt><br>然后登陆，用户名为admin’# 密码随便输一个，再把刚才爆出的验证码输入，成功登陆。。<br>然后看到三个文件，分别下载下来打开，发现了a.php提示在根目录中。于是尝试flag.php，发现什么都没有。<br>然后查看其余三个文件的下载方式，下载flag.php，注意要这样输入。。/var/www/html/Challenges/flag.php<br>背下来吧。。。。<br>下载下来，打开：<br><img src="/2019/04/07/getflag/getflag-e84e232c.png" alt><br>post flag=flag； 注意分号，为了让eval()函数终止。。。<br>最后查看源码，结果：<br><img src="/2019/04/07/getflag/getflag-41663e8b.png" alt></p>
+<h1 id="Notfound"><a href="#Notfound" class="headerlink" title="Notfound"></a>Notfound</h1><p>要是我说别的题茫然，也就算了。。。。。。可是这道题我是真没蒙啊。。。完全不知道这是再做什么。。。。<br>只能查看大佬的wp了、、、、、呵呵呵呵呵<br>首先仔细观察，可以看到404.php，进入看一眼。。。。这是在上一个嘲讽我是单身狗后，再次的嘲讽。。<br><img src="/2019/04/07/getflag/getflag-a3fa29fc.png" alt><br>后来抓了抓包：<br><img src="/2019/04/07/getflag/getflag-eb412ff0.png" alt><br>可以看到有个X-Method: haha。。。这其实是在提示http协议的请求方式。。<br><img src="/2019/04/07/getflag/getflag-adbf90d8.png" alt><br>一个个尝试一下。当时到OPTIONS时，发现：<br><img src="/2019/04/07/getflag/getflag-c1c6ee42.png" alt><br>访问一下1.php：<br><img src="/2019/04/07/getflag/getflag-9bbce837.png" alt><br>后来大佬们说有一个.htaccess，小菜鸟的我访问。。<br><img src="/2019/04/07/getflag/getflag-c337dd88.png" alt><br>XFF！！！这个以前做过，试着添加XFF=127.0.0.1，结果，失败。。想哭。。<br>后来发现用client-ip:127.0.0.1<br>自己还是太菜了。。。。想哭<br>呜呜┭┮﹏┭┮</p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> Donate
+            </a>
+        </div>
+        
+        <div class="post-tags">Tags：
+            
+            <a href="/tags/ctf-验证码爆破/">ctf 验证码爆破</a>
+            
+        </div>
+        
     </article>
+    
+    <p style="text-align: center">This article just represents my own viewpoint. If there is something wrong, please correct me.</p>
+    
+    
+
+    
+
 </div>
+<script src="/js/busuanzi.pure.mini.js"></script>
+
 
         </div><!-- end #main-->
     </div><!-- end #body -->
     <footer class="footer">
-    <div class="footer-inner" style="text-align: left">
+    <div class="footer-inner" style="text-align: center">
         <p>
             <a href="/about" title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             <!-- 自定义链接 -->
