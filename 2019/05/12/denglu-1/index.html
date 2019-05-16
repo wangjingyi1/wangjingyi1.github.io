@@ -1,0 +1,279 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+<meta http-equiv="X-DNS-Prefetch-Control" content="on">
+<link rel="dns-prefetch" href="http://yoursite.com">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="prefetch" href="http://yoursite.com">
+<link rel="prefetch" href="//www.google-analytics.com">
+
+
+<link rel="prerender" href="http://yoursite.com">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="John Doe">
+<link rel="stylesheet" href="/css/JSimple.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>i春秋 - Hexo</title>
+
+<meta name="keywords" content>
+
+<meta name="description " content>
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        });
+    </script>
+
+
+    
+
+    
+
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="说">说</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a>
+        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span>Tags</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">说IT</h1>
+        <h3 class="cover-siteTitle">用代码摇滚这个世界</h3>
+        <p class="cover-siteDesc">一个关注技术与人文的IT博客</p>
+        <div class="cover-sns">
+            
+    &nbsp;&nbsp;<div class="btn btn-telegram">
+        <a href="http://t.me/kunyintang" target="_blank" title="telegram" ref="friend">
+            <i class="fa fa-telegram"></i>
+        </a>
+    </div>
+
+    &nbsp;&nbsp;<div class="btn btn-instagram">
+        <a href="https://www.instagram.com/mtangsir/" target="_blank" title="instagram" ref="friend">
+            <i class="fa fa-instagram"></i>
+        </a>
+    </div>
+
+    &nbsp;&nbsp;<div class="btn btn-twitter">
+        <a href="https://twitter.com/tangkunyin" target="_blank" title="twitter" ref="friend">
+            <i class="fa fa-twitter"></i>
+        </a>
+    </div>
+
+    &nbsp;&nbsp;<div class="btn btn-github">
+        <a href="https://github.com/tangkunyin" target="_blank" title="github" ref="friend">
+            <i class="fa fa-github"></i>
+        </a>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+            <div class="page-title">
+    <ul>
+        <li><a href="/">Recent Posts</a></li>
+        
+        
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <input type="text" readonly="readonly" id="local-search-input-tip" placeholder="click to search...">
+        <button type="button" disabled="disabled" class="search-form-submit"><i class="fa fa-search"></i></button>
+    </form>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="https://shuoit.net" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar">
+                </a>
+                <p><span class="label">Author</span>
+                    <a href="https://shuoit.net" target="_blank">纠结伦</a>
+                    <span title="Last edited at&nbsp;2019-05-12">2019-05-12</span>
+                </p>
+                <p>一个搬🧱的劳斯基😁️️</p>
+            </div>
+            <h2 class="post-title">i春秋</h2>
+            <div class="post-meta">
+                emm... 3298 words in the article |
+                you are the&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>th friend who reading now
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h2 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h2><p>这道题做了很长时间，可能自己确实和老大他们还差很多吧。。。考试考完了。。以后要继续加油了<br>首先打开网页，发现应该是SQL注入，然后尝试万能公式：<br>admin’ or 1==1# 密码错误<br>admin’ or 1==2# 用户名错误<br>发现只要两个结果，所以可以采取布尔注入。查看大佬们的方法使用like进行了注入。但是这里有一个小关卡。查看网站源码，可以看到<br><img src="/2019/05/12/denglu-1/denglu-ec2cf7ca.png" alt><br>这里猜测俩个input的类名为数据库的名称。<br>脚本如下：<br><img src="/2019/05/12/denglu-1/denglu-94189dc4.png" alt><br>然后md5解码得到用户名和密码为：<br>bctf3admin admiqwe123666<br>登陆成功后可以看到<br><img src="/2019/05/12/denglu-1/denglu-303ca28c.png" alt><br>发现是git源码泄露，用GitHack将源码完完整整的下载下来。<br>这里走了不少弯路，将寻找flag的过程记录下来。<br>首先用GitHack将源码整个下载下来，如图：<br><img src="/2019/05/12/denglu-1/denglu-bb1751ad.jpg" alt><br>可以查看当前文件夹：<br><img src="/2019/05/12/denglu-1/denglu-c21b124c.jpg" alt><br>看到flag.php，进入查看内容<br><img src="/2019/05/12/denglu-1/denglu-5c0a9bb6.jpg" alt><br>发现失败，后来老大说是这里用到了stash缓存，所以进入refs查看缓存<br><img src="/2019/05/12/denglu-1/denglu-51ea8b5f.jpg" alt><br>看到sha-1加密后的一组数据，然后返回到最初的位置，返回到缓存的状态<br><img src="/2019/05/12/denglu-1/denglu-59513261.jpg" alt><br>最后进入flag.php,成功得到flag…</p>
+<h2 id="fuzzing"><a href="#fuzzing" class="headerlink" title="fuzzing"></a>fuzzing</h2><p>这道题跟前面两道题比起来可以说很顺利了。。。记录一下<br>首先打开题目，查看源码，什么也不能发现，然后用bp抓一下包，发现hint: ip,Large internal network<br><img src="/2019/05/12/denglu-1/denglu-ea79ab4d.png" alt><br>并不清楚什么意思，但是觉得很个性，于是看网上的wp，发现了应该是要构造ip，使用X-Forwarded-For，它要大的内部网络，直接将常用内网IP段都试下192.168.0.0 172.16.0.0 10.0.0.0<br>可以看到X-Forwarded-For:10.0.0.0，在返回的消息头有个Location: ./m4nage.php，访问得到show me a key 然后尝试传入key=1，注意这里要将方式改为post。<br><img src="/2019/05/12/denglu-1/denglu-bb4b67cc.png" alt><br>得到关于key的提示，编写脚本，爆破出key的值。<a href="https://www.jianshu.com/p/15bfc6143334" target="_blank" rel="noopener">https://www.jianshu.com/p/15bfc6143334</a><br><img src="/2019/05/12/denglu-1/denglu-69304de1.png" alt><br>得到key为ichunqiu105，传入，得到：<br><img src="/2019/05/12/denglu-1/denglu-02606c0e.png" alt><br>访问xx00xxoo.php，记得传入key的值：<br><img src="/2019/05/12/denglu-1/denglu-953ce842.png" alt><br>访问x0.txt<br>function authcode($string, $operation = ‘DECODE’, $key = ‘’, $expiry = 0) {<br>    $ckey_length = 4;</p>
+<pre><code>$key = md5($key ? $key : UC_KEY);
+$keya = md5(substr($key, 0, 16));
+$keyb = md5(substr($key, 16, 16));
+$keyc = $ckey_length ? ($operation == &apos;DECODE&apos; ? substr($string, 0, $ckey_length) : substr(md5(microtime()), -$ckey_length)) : &apos;&apos;;
+
+$cryptkey = $keya . md5($keya . $keyc);
+$key_length = strlen($cryptkey);
+
+$string = $operation == &apos;DECODE&apos; ? base64_decode(substr($string, $ckey_length)) : sprintf(&apos;%010d&apos;, $expiry ? $expiry + time() : 0) . substr(md5($string . $keyb), 0, 16) . $string;
+$string_length = strlen($string);
+
+$result = &apos;&apos;;
+$box = range(0, 255);
+
+$rndkey = array();
+for ($i = 0; $i &lt;= 255; $i++) {
+    $rndkey[$i] = ord($cryptkey[$i % $key_length]);
+}
+
+for ($j = $i = 0; $i &lt; 256; $i++) {
+    $j = ($j + $box[$i] + $rndkey[$i]) % 256;
+    $tmp = $box[$i];
+    $box[$i] = $box[$j];
+    $box[$j] = $tmp;
+}
+
+for ($a = $j = $i = 0; $i &lt; $string_length; $i++) {
+    $a = ($a + 1) % 256;
+    $j = ($j + $box[$a]) % 256;
+    $tmp = $box[$a];
+    $box[$a] = $box[$j];
+    $box[$j] = $tmp;
+    $result .= chr(ord($string[$i]) ^ ($box[($box[$a] + $box[$j]) % 256]));
+}
+
+if ($operation == &apos;DECODE&apos;) {
+    if ((substr($result, 0, 10) == 0 || substr($result, 0, 10) - time() &gt; 0) &amp;&amp; substr($result, 10, 16) == substr(md5(substr($result, 26) . $keyb), 0, 16)) {
+        return substr($result, 26);
+    } else {
+        return &apos;&apos;;
+    }
+} else {
+    return $keyc . str_replace(&apos;=&apos;, &apos;&apos;, base64_encode($result));
+}
+</code></pre><p>}<br>得到这么复杂的一大串，仔细观察一下，发现好像里面没有涉及到flag的加密。并且这个函数需要传入一个字符串和key值，这不是刚才得到的吗，来运行一下它，复制下来，添加一句echo将结果输出看下，并且将flag密文和ichunqiu105传入。<br>echo authcode(‘b2032UBnDrhFwb5RZrirJ/44K9pOb/pmScBJrYDrCv2o6WY/CNmedEjXDk96yacEJAEP2GoPh5V4CGimsQPKKYMI8TEQMWI’,$operation = ‘DECODE’, $key = ‘ichunqiu105’, $expiry = 0);<br>最后得到结果：<br><img src="/2019/05/12/denglu-1/denglu-a597c4fc.png" alt></p>
+<h2 id="Gift"><a href="#Gift" class="headerlink" title="Gift"></a>Gift</h2><p>这道题对于我来说，呵呵 是一个坑 我做了将近一个礼拜，墨迹老大墨迹了好长时间，最后竟然发现是因为我在阿里云买的服务器有问题，后来用老大的服务器，经过一番合作终于做了出来。。。。阿里云浪费了我的青春。。。。<br>打开题目，看到<br><img src="/2019/05/12/denglu-1/denglu-c58670bb.png" alt><br>将进入后只发现一个黑人搞笑的图片，其它的什么都没有，后来尝试改变POST请求的时候，返回了django错误，发现在低版本django中 key被泄露可导致远程命令执行，那么就得找到这个泄露的key 信息泄露代码泄露会想到github，要去C26s的github：<a href="https://github.com/c62s[查看一下，发现需要他的生日才能将压缩包解压，在网上找到脚本，开始爆破" target="_blank" rel="noopener">https://github.com/c62s[查看一下，发现需要他的生日才能将压缩包解压，在网上找到脚本，开始爆破</a><br>大佬链接：<a href="https://blog.csdn.net/include_heqile/article/details/83342576" target="_blank" rel="noopener">https://blog.csdn.net/include_heqile/article/details/83342576</a><br>字典制作脚本：<br><img src="/2019/05/12/denglu-1/denglu-9fafb994.png" alt><br>爆破脚本：<br><img src="/2019/05/12/denglu-1/denglu-7d24d49e.png" alt><br>运行：<br><img src="/2019/05/12/denglu-1/denglu-2e56fa8e.png" alt><br>得到：<br><img src="/2019/05/12/denglu-1/denglu-08026d32.png" alt><br>找到了KEY，加下来开始写脚本：<br><img src="/2019/05/12/denglu-1/denglu-a04ba882.png" alt><br>运行脚本：<br><img src="/2019/05/12/denglu-1/denglu-b1a2fd3c.png" alt><br>得到后，bp抓包，记得抓user123那里的包，修改sessionid<br><img src="/2019/05/12/denglu-1/denglu-1f380464.png" alt><br>最后监听就可以了：<br>命令 nc -ul 8080<br>最后get到flag：<br><img src="/2019/05/12/denglu-1/denglu-21dde350.jpg" alt><br>大功告成！！！！！！！！！！！！！！！</p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> Donate
+            </a>
+        </div>
+        
+        <div class="post-tags">Tags：
+            
+            <a href="/tags/web-ctf/">web  ctf</a>
+            
+        </div>
+        
+    </article>
+    
+    <p style="text-align: center">This article just represents my own viewpoint. If there is something wrong, please correct me.</p>
+    
+    
+
+    
+
+</div>
+<script src="/js/busuanzi.pure.mini.js"></script>
+
+
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner" style="text-align: center">
+        <p>
+            <a href="/about" title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/help" title="Help">Help</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/links" title="Links">Links</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/sitemap.xml" title="SiteMap">SiteMap</a>
+        </p>
+        <p>
+            Has been established&nbsp<a href="/timeline" id="siteBuildingTime"></a>&nbspDays，<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="licence">Based on Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a><br>
+            ©2017-<span id="cpYear"></span> Based on&nbsp<a href="http://hexo.io" target="_blank" rel="nofollow">Hexo</a>
+            ，Theme by&nbsp&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank" rel="bookmark">JSimple</a>
+            ，Author&nbsp<a href="https://shuoit.net" target="_blank" rel="friend">纠结伦</a>
+            ，Hosted by <a href="https://pages.github.com/" target="_blank" rel="nofollow">GitHub Pages</a>
+        </p>
+    </div>
+</footer>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<!-- search pop -->
+<div class="popup search-popup local-search-popup">
+    <div class="local-search-header clearfix">
+        <span class="search-icon">
+            <i class="fa fa-search"></i>
+        </span>
+        <span class="popup-btn-close">
+            <i class="fa fa-times-circle"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+            <input id="local-search-input" spellcheck="false" type="text" autocomplete="off" placeholder="Input query keywords here...">
+        </div>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        var jsi_config = {
+            buildingTime: '01/20/2018',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+            localSearch: { dbPath: '' },
+            readMode: 'day'
+        };
+        
+        SimpleCore.init(jsi_config);
+        
+    });
+</script>
+</body>
+</html>
