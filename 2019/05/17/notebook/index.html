@@ -24,7 +24,7 @@
 <link rel="shortcut icon" href="/images/favicon.png">
 
 
-<title>ddctf web wp - Hexo</title>
+<title>notebook - Hexo</title>
 
 <meta name="keywords" content>
 
@@ -134,18 +134,19 @@
                 </a>
                 <p><span class="label">作者</span>
                     <a href="https://shuoit.net" target="_blank">纠结伦</a>
-                    <span title="最后编辑于&nbsp;2019-04-20">2019-04-20</span>
+                    <span title="最后编辑于&nbsp;2019-05-17">2019-05-17</span>
                 </p>
                 <p>一个搬🧱的劳斯基😁️️</p>
             </div>
-            <h2 class="post-title">DDCTF web wp</h2>
+            <h2 class="post-title">notebook</h2>
             <div class="post-meta">
-                本文共计71个字 |
+                本文共计1471个字 |
                 您是第&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
             </div>
         </div>
         <div class="post-content markdown-body">
-            <h2 id="滴"><a href="#滴" class="headerlink" title="滴~"></a>滴~</h2><p>首先看到url，类似base64加密后的操作：<br><img src="/2019/04/20/DDCTF-web-wp/DDCTF-web-wp-86722e04.png" alt><br>经过几次尝试，发现它的加密过程为b64(b64(ascii2hex(filename)))</p>
+            <h2 id="notebook"><a href="#notebook" class="headerlink" title="notebook"></a>notebook</h2><p>看了大佬的wp，说像这种有登录和有注册，应该只有两种情况，不是注入就是session漏洞。。<br>注入尝试了几次，发现没有注入点啊。。然后考虑session的漏洞。在做之前狂补了一下关于session的知识点。。。捎带着想把cookie看了。<br>用御剑扫描出了robots.txt,进入看一下。再进入php1nFo.php。发现了好多东西。。<br>首先观察到了open_basedir,这个是我们不能直接访问文件，因为他的后面的文件不能直接访问。<br><img src="/2019/05/17/notebook/notebook-76f598d4.png" alt><br>然后观察session，发现了session的地址<br><img src="/2019/05/17/notebook/notebook-b72ade3c.png" alt><br>接下来试着用action.php来包含一下php1nFo.php，发现了session的位置发生了变化<br><img src="/2019/05/17/notebook/notebook-1902e4bb.png" alt><br><img src="/2019/05/17/notebook/notebook-dbfb07b5.png" alt><br>接下来注册一个木马用户。。。<br>这里的base64_decode是为了绕过过滤。<br><img src="/2019/05/17/notebook/notebook-0ba978f7.png" alt><br>接下来构造payload：<br><img src="/2019/05/17/notebook/notebook-d8cf720c.png" alt><br>这个payload：<br>首先session文件的名称同一为sess_PHPSESSID,PHPSESSID可以在cookie中看到，然后b的值为cat flag.php，要进行base64加密，绕过过滤。<br>最后就得到了flag。看到一篇session很好的文章，记录下来<br><a href="https://www.cnblogs.com/wangtao_20/archive/2011/02/16/1955659.html" target="_blank" rel="noopener">https://www.cnblogs.com/wangtao_20/archive/2011/02/16/1955659.html</a></p>
+<h2 id="LOOK"><a href="#LOOK" class="headerlink" title="LOOK"></a>LOOK</h2><p>打开一片雪白。。。抓包看一下。可以看到X-HT: verify：<br><img src="/2019/05/17/notebook/notebook-807785c8.png" alt><br>进行尝试：<br><img src="/2019/05/17/notebook/notebook-3638b3dc.png" alt><br>发现超过4位就报错：<br><img src="/2019/05/17/notebook/notebook-1b878e33.png" alt><br>然后用万能钥匙，出了下一步的文件夹：<br><img src="/2019/05/17/notebook/notebook-4f83a8ac.png" alt><br>访问后只有一个hello，再次抓包看一看，看到了X-HT: viminfo：<br><img src="/2019/05/17/notebook/notebook-6d675791.png" alt><br>提示viminfo 联想到.viminfo隐藏文件 存有vim操作记录。进入后看到提示，访问备份文件：<br>5211ec9dde53ee65bb02225117fba1e1.php.backup~~~<br>进入后访问源码发现：<br><img src="/2019/05/17/notebook/notebook-5d300642.png" alt><br>经过一番审视发现这道题很纠结，它让你提交非非 Bctf2O(大写O)16但进入数据库查询又当作是Bctf2O16的一个字符串。这里要用到mysql的特性：<br>MYSQL 中 utf8_unicode_ci 和 utf8_general_ci 两种编码格式, utf8_general_ci不区分大小写, Ä = A, Ö = O, Ü = U 这三种条件都成立, 对于utf8_general_ci下面的等式成立：ß = s ，但是，对于utf8_unicode_ci下面等式才成立：ß = ss 。 可以看到大写O和Ö是相等的。<br>所以提交?usern3me=Bctf2Ö16，得到结果：<br><img src="/2019/05/17/notebook/notebook-1821b288.png" alt><br>继续访问，得到：<br><img src="/2019/05/17/notebook/notebook-96e311db.png" alt><br>upload目录 无法利用..跳目录。Path限制为<a href="http://127.0.0.1/开头。没有其他因素的情况下是无法getshell的" target="_blank" rel="noopener">http://127.0.0.1/开头。没有其他因素的情况下是无法getshell的</a> 因为匹配到127.0.0.1/ 斜杠 所以无法利用<a href="http://127.0.0.1:test@www.baidu.com" target="_blank" rel="noopener">http://127.0.0.1:test@www.baidu.com</a> 来饶过。这时可利用之前的关卡来辅助我们进行getshell ，重新访问上一个文件，后台会把username输出出来 这样就可以利用该URL构造username为一句话进行getshell了。http://***/?path=<a href="http://127.0.0.1//5211ec9dde53ee65bb02225117fba1e1.php?usern3me=" target="_blank" rel="noopener">http://127.0.0.1//5211ec9dde53ee65bb02225117fba1e1.php?usern3me=</a>&lt;?php%2520eval($_POST[a0]);?&gt;&amp;filename=1.php之后访问1.php，获取flag。<br>然后访问upload/1.php,最后再查看源码，出来结果。。</p>
 
         </div>
         <div class="post-tool">
@@ -156,7 +157,7 @@
         
         <div class="post-tags">标签：
             
-            <a href="/tags/web-ctf/">web ctf</a>
+            <a href="/tags/i春秋-web/">i春秋 web</a>
             
         </div>
         
